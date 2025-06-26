@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craft Lanka - Sign Up</title>
+    <!-- Link to Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color:#fdf9d4;
+        }
+        header{
+            background-color:#f8ef98;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header Section -->
+    <header class="shadow-sm py-4 border-t-2 border-b-2 border-orange-300">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <!-- Brand Logo/Name -->
+            <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                </svg>
+                <span class="text-gray-800 text-xl font-bold">Craft Lanka</span>
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">Home</a>
+                <a href="all_crafts_listings.html" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">Shop</a>
+                <a href="about_us.html" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">About</a>
+                <a href="contact_us.html" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">Contact</a>
+            </div>
+
+            <!-- Sign In Button (Active State) -->
+            <div>
+                 <a href="login.html" class="bg-gray-100 text-gray-800 px-5 py-2 rounded-md font-semibold hover:bg-gray-200 transition-colors duration-200">Sign In</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content - Sign Up Form -->
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+            <h2 class="text-2xl font-semibold text-center mb-6 text-gray-800">Create your account</h2>
+
+            <form>
+                <div class="mb-4">
+                    <label for="fullName" class="block text-gray-700 text-sm font-medium mb-2">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name"
+                           class="shadow-sm appearance-none border border-gray-300 rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-transparent transition-all duration-200"
+                           required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 text-sm font-medium mb-2">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email"
+                           class="shadow-sm appearance-none border border-gray-300 rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-transparent transition-all duration-200"
+                           required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="password" class="block text-gray-700 text-sm font-medium mb-2">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password"
+                           class="shadow-sm appearance-none border border-gray-300 rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-transparent transition-all duration-200"
+                           required>
+                </div>
+
+                <div class="mb-6">
+                    <label for="confirmPassword" class="block text-gray-700 text-sm font-medium mb-2">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password"
+                           class="shadow-sm appearance-none border border-gray-300 rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-transparent transition-all duration-200"
+                           required>
+                </div>
+
+                <button type="submit"
+                        class="w-full bg-orange-200 text-gray-800 py-2.5 px-4 rounded-md font-semibold hover:bg-orange-300 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:ring-opacity-75 transition-all duration-200">
+                    Sign Up
+                </button>
+            </form>
+
+            <p class="text-center text-sm text-gray-600 mt-6">
+                Already have an account?
+                <a href="login.html" class="text-gray-800 hover:underline font-medium transition-colors duration-200">Sign in</a>
+            </p>
+        </div>
+    </main>
+
+</body>
+</html>
+

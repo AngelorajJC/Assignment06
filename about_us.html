@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Craft Lanka</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color:#fdf9d4;
+        }
+        header{
+            background-color:#f8ef98;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <header class="shadow-sm py-4 border-t-2 border-b-2 border-orange-300">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                </svg>
+                <span class="text-gray-800 text-xl font-bold">Craft Lanka</span>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">Home</a>
+                <a href="all_crafts_listings.html" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">Shop</a>
+                <a href="Artist_details.html" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">Artisans</a>
+                <a href="about_us.html" class="text-orange-600 font-semibold transition-colors duration-200">About Us</a>
+                <a href="contact_us.html" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">Contact</a>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <div class="relative hidden sm:block">
+                    <input type="text" placeholder="Search" class="pl-10 pr-4 py-2 rounded-lg bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-transparent text-gray-700 w-48">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+                <a href="#" class="text-gray-600 hover:text-gray-900">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-600 hover:text-gray-900">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                </a>
+                <a href="login.html" class="text-gray-600 hover:text-gray-900">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto py-8 px-4 sm:px-6 lg:px-8 flex-grow">
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">About Craft Lanka</h1>
+            
+            <p class="text-lg text-gray-700 mb-6">
+                Welcome to **Craft Lanka**, your premier destination for authentic Sri Lankan handicrafts. Our mission is to connect the rich heritage of Sri Lankan artistry with the world, empowering local artisans and preserving traditional craftsmanship for future generations.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Our Story</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Craft Lanka was born out of a passion for the vibrant and intricate crafts of Sri Lanka. We saw an opportunity to create a platform that not only showcases the incredible talent of our local artisans but also provides them with a sustainable livelihood. Every piece you find here tells a story – a story of dedication, tradition, and the unique cultural tapestry of our island nation.
+                    </p>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Our Mission</h2>
+                    <ul class="list-disc list-inside text-gray-600 leading-relaxed">
+                        <li>**Empower Artisans:** Provide fair trade opportunities and direct access to global markets for Sri Lankan craftsmen and women.</li>
+                        <li>**Preserve Heritage:** Promote and sustain traditional Sri Lankan craft techniques that have been passed down through generations.</li>
+                        <li>**Showcase Quality:** Offer high-quality, authentic, and unique handmade products to our customers worldwide.</li>
+                        <li>**Foster Appreciation:** Educate customers about the cultural significance and artistry behind each craft item.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Our Values</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 p-4 rounded-md shadow-sm text-center">
+                        <h3 class="font-medium text-gray-800 mb-2">Authenticity</h3>
+                        <p class="text-sm text-gray-600">We source directly from artisans, ensuring every piece is genuinely handcrafted in Sri Lanka.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-md shadow-sm text-center">
+                        <h3 class="font-medium text-gray-800 mb-2">Sustainability</h3>
+                        <p class="text-sm text-gray-600">We promote eco-friendly practices and materials wherever possible, supporting a greener future.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-md shadow-sm text-center">
+                        <h3 class="font-medium text-gray-800 mb-2">Community</h3>
+                        <p class="text-sm text-gray-600">We invest in the communities of our artisans, contributing to their growth and well-being.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-lg text-gray-700 text-center mt-8">
+                Thank you for joining us on this journey to celebrate the timeless beauty and artistry of Sri Lanka.
+            </p>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 px-4 sm:px-6 lg:px-8 text-center mt-auto">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-center sm:justify-between items-center space-y-4 sm:space-y-0">
+            <p>&copy; 2024 Craft Lanka. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="about_us.html" class="hover:text-orange-400 transition-colors duration-200">About Us</a>
+                <a href="contact_us.html" class="hover:text-orange-400 transition-colors duration-200">Contact</a>
+                <a href="privacy_policy.html" class="hover:text-orange-400 transition-colors duration-200">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

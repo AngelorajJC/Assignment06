@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craft Lanka - Crafts Listing</title>
+    <!-- Link to Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font for Inter, if needed. Tailwind uses system fonts by default. */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color:#fdf9d4;
+            /* Tailwind equivalent for bg-neutral-50 is defined in the body tag below */
+        }
+        header{
+            background-color:#f8ef98;
+        }
+        /* Custom range slider styling for better visual match */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #f97316; /* Tailwind orange-500 */
+            cursor: pointer;
+            border: 2px solid #fff; /* White border for the thumb */
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #f97316; /* Tailwind orange-500 */
+            cursor: pointer;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+        }
+        input[type="range"]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            background: #e5e7eb; /* Tailwind gray-200 */
+            border-radius: 2px;
+        }
+        input[type="range"]::-moz-range-track {
+            width: 100%;
+            height: 4px;
+            background: #e5e7eb; /* Tailwind gray-200 */
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col">
+
+    <!-- Header Section -->
+    <header class="shadow-sm py-4 border-t-2 border-b-2 border-orange-300">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <!-- Brand Logo/Name -->
+            <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                </svg>
+                <span class="text-gray-800 text-xl font-bold">Craft Lanka</span>
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">Home</a>
+                <a href="all_crafts_listings.html" class="text-orange-600 font-semibold transition-colors duration-200">Crafts</a>
+                <a href="Artist_details.html" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">Artisans</a>
+                <a href="about_us.html" class="text-gray-600 hover:text-gray-900 transition-colors duration-200">About Us</a>
+            </div>
+            <!-- Mobile Menu Button (Optional, not in image but good for responsiveness) -->
+            <div class="md:hidden">
+                <button class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto flex flex-col md:flex-row flex-grow py-8 px-4 sm:px-6 lg:px-8">
+        <!-- Left Sidebar - Refine Filters -->
+        <aside class="w-full md:w-1/4 lg:w-1/5 bg-white p-6 rounded-lg shadow-md mb-8 md:mb-0 md:mr-8">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">Refine</h3>
+
+            <!-- Craft Type Filter -->
+            <div class="mb-6">
+                <h4 class="text-md font-medium text-gray-700 mb-3">Craft Type</h4>
+                <div class="space-y-2">
+                    <div>
+                        <input type="checkbox" id="pottery" name="craftType" value="pottery" class="rounded text-orange-500 focus:ring-orange-400">
+                        <label for="pottery" class="ml-2 text-gray-700">Pottery</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="woodCarvings" name="craftType" value="woodCarvings" class="rounded text-orange-500 focus:ring-orange-400">
+                        <label for="woodCarvings" class="ml-2 text-gray-700">Wood Carvings</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="textiles" name="craftType" value="textiles" class="rounded text-orange-500 focus:ring-orange-400">
+                        <label for="textiles" class="ml-2 text-gray-700">Textiles</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="jewelry" name="craftType" value="jewelry" class="rounded text-orange-500 focus:ring-orange-400">
+                        <label for="jewelry" class="ml-2 text-gray-700">Jewelry</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Price Range Filter -->
+            <div class="mb-6">
+                <h4 class="text-md font-medium text-gray-700 mb-3">Price Range</h4>
+                <div class="flex items-center justify-between text-gray-600 text-sm mb-2">
+                    <span>$20</span>
+                    <span>$200</span>
+                </div>
+                <!-- Single range input to simulate the visual from the image -->
+                <input type="range" min="0" max="100" value="50" class="w-full h-2 rounded-lg appearance-none cursor-pointer bg-gray-200">
+            </div>
+
+            <!-- Artisan Filter -->
+            <div class="mb-6">
+                <h4 class="text-md font-medium text-gray-700 mb-3">Artisan</h4>
+                <div class="relative">
+                    <select class="block appearance-none w-full bg-gray-100 border border-gray-200 text-gray-700 py-2 px-3 pr-8 rounded-md leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                        <option>Select Artisan</option>
+                        <option>Artisan Kamal</option>
+                        <option>Artisan Rohan</option>
+                        <option>Artisan Anika</option>
+                        <option>Artisan Devika</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828l-4.243-4.242-1.414 1.414L9.293 12.95z"/></svg>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Content - Crafts Listing -->
+        <section class="flex-grow">
+            <nav class="text-sm text-gray-500 mb-6">
+                <a href="#" class="hover:underline">Crafts</a> / <span class="text-gray-700 font-medium">All Crafts</span>
+            </nav>
+
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">All Crafts</h2>
+
+            <!-- Craft Categories/Filters (Pills) -->
+            <div class="flex flex-wrap gap-2 mb-8">
+                <button class="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-orange-600 transition-colors duration-200">Pottery</button>
+                <button class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors duration-200">Wood Carvings</button>
+                <button class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors duration-200">Textiles</button>
+                <button class="bg-gray-100 text-gray-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors duration-200">Jewelry</button>
+            </div>
+
+            <!-- Crafts Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Craft Card 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-200 hover:scale-105">
+                    <a href="product_details.html">
+                    <img src="./images/ceramic_vase.png" alt="Handmade Ceramic Vase" class="w-full h-85 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Handmade Ceramic Vase</h3>
+                        <p class="text-sm text-gray-600 mb-3">By Artisan Kamal</p>
+                        <!-- Add price or other details if needed -->
+                    </div>
+                    </a>
+                </div>
+
+                <!-- Craft Card 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-200 hover:scale-105">
+                    <img src="https://placehold.co/400x300/F0F0F0/000000?text=Craft+Image+2" onerror="this.onerror=null;this.src='https://placehold.co/400x300/F0F0F0/000000?text=Image+2';" alt="Intricately Carved Wooden Elephant" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Intricately Carved Wooden Elephant</h3>
+                        <p class="text-sm text-gray-600 mb-3">By Artisan Rohan</p>
+                        <!-- Add price or other details if needed -->
+                    </div>
+                </div>
+
+                <!-- Craft Card 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-200 hover:scale-105">
+                    <img src="https://placehold.co/400x300/F0F0F0/000000?text=Craft+Image+3" onerror="this.onerror=null;this.src='https://placehold.co/400x300/F0F0F0/000000?text=Image+3';" alt="Traditional Batik Scarf" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Traditional Batik Scarf</h3>
+                        <p class="text-sm text-gray-600 mb-3">By Artisan Anika</p>
+                        <!-- Add price or other details if needed -->
+                    </div>
+                </div>
+
+                <!-- Craft Card 4 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-200 hover:scale-105">
+                    <img src="https://placehold.co/400x300/F0F0F0/000000?text=Craft+Image+4" onerror="this.onerror=null;this.src='https://placehold.co/400x300/F0F0F0/000000?text=Image+4';" alt="Silver Filigree Earrings" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Silver Filigree Earrings</h3>
+                        <p class="text-sm text-gray-600 mb-3">By Artisan Devika</p>
+                        <!-- Add price or other details if needed -->
+                    </div>
+                </div>
+
+                <!-- You can add more craft cards here following the same structure -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center items-center mt-10 space-x-2">
+                <button class="p-2 rounded-full text-gray-500 hover:bg-gray-100 transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <button class="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-orange-600 transition-colors duration-200">1</button>
+                <button class="text-gray-600 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors duration-200">2</button>
+                <button class="text-gray-600 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors duration-200">3</button>
+                <button class="text-gray-600 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-100 transition-colors duration-200">4</button>
+                <button class="p-2 rounded-full text-gray-500 hover:bg-gray-100 transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
+
